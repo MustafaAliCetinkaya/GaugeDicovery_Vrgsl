@@ -64,7 +64,7 @@ public class HomePage extends BaseMethods {
     }
 
     @Step("Add <count> product to cart")
-    public void addProductToCartWithCount(String count) {
+    public void addProductToCartWithCount(String count) throws InterruptedException {
         for (int i = 0; i < parseInt(count); i++) {
             addProductToCart(getElementByIndex(PRODUCTS, i));
         }
@@ -87,7 +87,7 @@ public class HomePage extends BaseMethods {
         click(WATCHLIST_PAGE);
     }
 
-    private void addProductToCart(WebElement element) {
+    private void addProductToCart(WebElement element) throws InterruptedException {
         ProductDetailPage productDetailPage = new ProductDetailPage();
 
         click(element);

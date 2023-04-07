@@ -14,7 +14,7 @@ public class CartPage extends BaseMethods {
 
     private final By CART_ITEMS = By.className("cart-bucket");
     private final By REMOVE_ITEM_BUTTON = By.cssSelector("[data-test-id='cart-remove-item']");
-
+    private final By MINI_CART = By.id("gh-minicart-hover");
     @Step("Check there are <count> items in the cart")
     public void checkTheCartHasItemsWithCount(String count) {
         List<WebElement> productListInCart = findElements(CART_ITEMS);
@@ -28,7 +28,10 @@ public class CartPage extends BaseMethods {
 
     @Step("Remove an item in cart")
     public void removeAnItemInCart() throws InterruptedException {
+        click(MINI_CART);
+        Thread.sleep(2000);
         clickItemWithJs(REMOVE_ITEM_BUTTON);
-        Thread.sleep(250);
+        Thread.sleep(2000);
+
     }
 }
