@@ -13,7 +13,7 @@ public class ConfigurationReader {
         try {
 
             //2- We need to open the file in java memory: FileInputStream
-            FileInputStream file = new FileInputStream("configuration.properties");//This reader comes from java. We use it for reading files
+            FileInputStream file = new FileInputStream("config.properties");//This reader comes from java. We use it for reading files
 
             //3- Load the properties object using FileInputStream object
             properties.load(file);
